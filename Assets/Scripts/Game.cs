@@ -3,7 +3,7 @@ using UnityEngine;
 public class Game : MonoBehaviour
 {
     public CanvasGroup CanvasGroup;
-    private static bool isGameStarted = false;
+    private static bool IsGameStarted = false;
     
     void Start()
     {
@@ -13,10 +13,16 @@ public class Game : MonoBehaviour
     public void OnStartButtonClicked()
     {
         CanvasGroupDisplayer.Hide(CanvasGroup);
-        isGameStarted = true;
+        IsGameStarted = true;
     }
-    public static bool IsGameStarted()
+    void Awake()
     {
-        return isGameStarted;
+        IsGameStarted = false;
     }
+
+    public static bool isGameNotStarted()
+    {
+        return !IsGameStarted;
+    }
+    
 }

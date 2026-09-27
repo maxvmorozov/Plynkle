@@ -3,11 +3,16 @@ using UnityEngine.InputSystem;
 
 public class MouseLauncher : MonoBehaviour
 {
-
     public Launcher Launcher;
     
     void Update()
     {
+        if (Game.isGameNotStarted())
+            return;
+
+        if (Mouse.current == null)
+            return;
+
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Launch();

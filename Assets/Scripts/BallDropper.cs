@@ -8,7 +8,13 @@ public class BallDropper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Game.IsGameStarted() && Mouse.current.leftButton.wasPressedThisFrame)
+        if (Game.isGameNotStarted())
+            return;
+
+        if (Mouse.current == null)
+            return;
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             DropBall();
         }
