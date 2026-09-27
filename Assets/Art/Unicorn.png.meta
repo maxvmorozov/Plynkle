@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4c35eff2a9d35475f847cb29045dde6b
+guid: 0a6943b95fda14d9c86a3bc87e97e1d3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -999456493432104195
-    second: pegBlue_0
+      213: -2092730633671331588
+    second: Unicorn_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pegBlue_0
+      name: Unicorn_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 9
         y: 0
-        width: 72
-        height: 72
+        width: 380
+        height: 266
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dfa95845d973122f0800000000000000
-      internalID: -999456493432104195
+      spriteID: cf03171939025f2e0800000000000000
+      internalID: -2092730633671331588
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pegBlue_0: -999456493432104195
+      Unicorn_0: -2092730633671331588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
