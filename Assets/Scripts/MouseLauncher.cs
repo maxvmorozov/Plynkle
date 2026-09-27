@@ -7,8 +7,8 @@ public class MouseLauncher : MonoBehaviour
     
     void Update()
     {
-        if (Game.isGameNotStarted())
-            return;
+     //   if (Game.isGameNotStarted())
+      //     return;
 
         if (Mouse.current == null)
             return;
