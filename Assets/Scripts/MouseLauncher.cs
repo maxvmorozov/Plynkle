@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class MouseLauncher : MonoBehaviour
 {
     public Launcher Launcher;
+    public Sounds Sounds;
     
     void Update()
     {
@@ -22,6 +23,8 @@ public class MouseLauncher : MonoBehaviour
     private void Launch()
     {
         Vector2 aimDirection = GetAimDirection();
+
+        Sounds.PlayCannonSound();
         
         Launcher.Launch(aimDirection);
     }
