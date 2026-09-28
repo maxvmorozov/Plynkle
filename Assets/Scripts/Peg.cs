@@ -1,55 +1,67 @@
-using System;
 using UnityEngine;
 using System.Collections.Generic;
 
 public class Peg : MonoBehaviour
 {
-    public List<Sprite> Sprites;
+    public List<Sprite> PegSprites;
     public Sounds Sounds;
-    
-    private int currentSpriteNumber = 0;
+    public GameObject RingParticlePrefab;
+
+    private int spriteNumber = 0;
     private SpriteRenderer spriteRenderer;
+
+    public void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
 
     public void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sprite = Sprites[currentSpriteNumber];
+        spriteRenderer.sprite = PegSprites[0];
     }
+
     public void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ball"))
         {
-            OnBallHit();
+            HandleBallHit();
         }
     }
 
-    private void OnBallHit()
+    private void HandleBallHit()
     {
-        if (NoMoreSprites())
+        SpawnRingParticle();
+
+        if (spriteNumber == PegSprites.Count - 1)
         {
-            Sounds.PlayPegDestroyedSound();
-            Destroy(gameObject);
-            
+            DestroyPeg();
         }
         else
         {
-            Sounds.PlayPegHitSound();
-            ShowNextSprite();
+            ChangeToNextColor();
         }
     }
 
-    private void ShowNextSprite()
+    private void SpawnRingParticle()
     {
-        currentSpriteNumber++;
-        spriteRenderer.sprite = Sprites[currentSpriteNumber];
+        Instantiate(
+            RingParticlePrefab,
+            transform.position,
+            Quaternion.identity
+        );
     }
 
-    private bool NoMoreSprites()
+    private void ChangeToNextColor()
     {
-        if (currentSpriteNumber == 2)
-        {
-            return true;
-        }
-        return false;
+        spriteNumber = spriteNumber + 1;
+        spriteRenderer.sprite = PegSprites[spriteNumber];
+
+        Sounds.PlayPegHitSound();
+    }
+
+    private void DestroyPeg()
+    {
+        Sounds.PlayPegDestroyedSound();
+        Destroy(gameObject);
     }
 }

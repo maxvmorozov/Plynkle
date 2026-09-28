@@ -142,8 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b220ad722fb4b55a13a22d3f4d9f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Peg
-  Sprites:
+  PegSprites:
   - {fileID: -999456493432104195, guid: 4c35eff2a9d35475f847cb29045dde6b, type: 3}
   - {fileID: -3116489104628534325, guid: b408d13d2ee1d4923a40645d0ef6aeeb, type: 3}
   - {fileID: 8501007191392823422, guid: 28110b256723b4c658aceadf30b4aa0b, type: 3}
   Sounds: {fileID: 0}
+  RingParticlePrefab: {fileID: 6363595355174641820, guid: 50dc2b73428e04a12b18502d5706a4ba, type: 3}
