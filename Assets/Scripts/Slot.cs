@@ -1,7 +1,9 @@
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Slot : MonoBehaviour
 {
+    public int Points = 10;
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Ball"))
@@ -12,6 +14,11 @@ public class Slot : MonoBehaviour
 
     private void OnBallEntered(Collider2D other)
     {
-        print("OnBallEntered");
+        ScorePoints();
+    }
+
+    private void ScorePoints()
+    {
+        ScoreKeeper.Add(Points);
     }
 }
