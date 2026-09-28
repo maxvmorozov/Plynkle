@@ -2,17 +2,17 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    public CanvasGroup CanvasGroup;
+    public UI Ui;
     private static bool IsGameStarted = false;
     
     void Start()
     {
-        CanvasGroupDisplayer.Show(CanvasGroup);
+        Ui.ShowStartScreen();
     }
 
     public void OnStartButtonClicked()
     {
-        CanvasGroupDisplayer.Hide(CanvasGroup);
+        Ui.HideStartScreen();
         IsGameStarted = true;
     }
     void Awake()
