@@ -8,11 +8,13 @@ public class Game : MonoBehaviour
     void Start()
     {
         Ui.ShowStartScreen();
+        Ui.HideGui();
     }
 
     public void OnStartButtonClicked()
     {
         Ui.HideStartScreen();
+        Ui.ShowGui();
         IsGameStarted = true;
     }
     void Awake()

@@ -11,13 +11,16 @@ public class MouseLauncher : MonoBehaviour
      //   if (Game.isGameNotStarted())
       //     return;
 
-        if (Mouse.current == null)
+      if (Ball.IsBallInPlay())
+          return;
+      
+      if (Mouse.current == null)
             return;
 
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Launch();
-        }
+      if (Mouse.current.leftButton.wasPressedThisFrame)
+      {
+          Launch();
+      } 
     }
 
     private void Launch()
